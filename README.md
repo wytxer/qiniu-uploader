@@ -9,7 +9,7 @@
 
 ```bash
 # 使用 cli 指定所有参数
-qiniu upload -c ak "ak" -sk "sk" -b "bucket" -z "zone" -o -d "dist/**"
+qiniu upload -c ak "ak" -sk "sk" -b "bucket" -z "zone" -cwd "dist" -d "**" -o
 
 # 指定配置文件
 qiniu upload -c "/xxx/qiniu.config.json"
@@ -25,8 +25,8 @@ qiniu upload -c "/xxx/qiniu.config.json"
   "zone": "Zone_z2",
   "overwrite": true,
   "prefix": "www/",
-  "dest": "dist/**",
-  "contain": true
+  "cwd": "dist",
+  "dest": "**"
 }
 ```
 
@@ -39,15 +39,15 @@ qiniu upload -c "/xxx/qiniu.config.json"
 Usage: cmd upload [options]
 
 Options:
-  -c --config <config>  配置文件路径（default: "qiniu.config.json"）
+  -c --config <config>  配置文件路径 (default: "qiniu.config.json")
   -ak --ak <ak>         访问秘钥
   -sk --sk <sk>         上传秘钥
   -b --bucket <bucket>  上传空间
   -z --zone <zone>      空间所属区域
   -o --overwrite        是否强制覆盖已有文件
-  -p --prefix <prefix>  文件路径前缀
-  -d --dest <dest>      文件目录
-  -contain --contain    是否包含根路径
+  -p --prefix <prefix>  文件路径前缀 (default: "")
+  -cwd --cwd <cwd>      上传文件根目录 (default: "")
+  -d --dest <dest>      上传文件
   -h, --help            帮助
 ```
 
