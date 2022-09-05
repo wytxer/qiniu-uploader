@@ -3,12 +3,12 @@ interface IOptions {
     config?: string;
     ak: string;
     sk: string;
-    zone: string;
-    dest: string;
-    overwrite?: boolean;
     bucket: string;
+    zone: string;
+    overwrite?: boolean;
     prefix?: string;
-    contain?: boolean;
+    cwd?: string;
+    dest: string;
 }
 declare const _default: (options: IOptions) => void;
 export default _default;
