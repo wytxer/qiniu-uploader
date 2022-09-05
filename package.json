@@ -1,0 +1,76 @@
+{
+  "name": "@wytxer/qiniu-uploader",
+  "version": "1.0.1",
+  "description": "一个轻量的七牛云文件批量上传工具。",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "eslint": "eslint . --ext .ts,.tsx",
+    "es:fix": "eslint . --ext .ts,.tsx --fix"
+  },
+  "bin": {
+    "qiniu": "./bin/cmd"
+  },
+  "main": "lib/index.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "glob": "^8.0.3",
+    "qiniu": "^7.7.0",
+    "update-notifier": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.6.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.4",
+    "typescript": "^4.8.2"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/wytxer/qiniu-uploader/#readme",
+  "keywords": [
+    "qiniu",
+    "upload",
+    "uploader",
+    "node",
+    "cli",
+    "ts",
+    "typescript"
+  ],
+  "author": {
+    "name": "wytxer",
+    "url": "https://github.com/wytxer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wytxer/qiniu-uploader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wytxer/qiniu-uploader/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run es:fix"
+    ]
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ]
+}
